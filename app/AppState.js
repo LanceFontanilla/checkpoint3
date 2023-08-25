@@ -12,27 +12,27 @@ class ObservableAppState extends EventEmitter {
 
 
   /** @type {import('./models/Note.js').Note[]} */
-  //notes = loadState('notes', [Note])
+  notes = loadState('notes', [Note])
 
 
-  notes = [
-    new Note(
-      {
-        title: "NOTE Number 1",
-        noteBody: "This is my first note!"
+  // notes = [
+  //   new Note(
+  //     {
+  //       title: "NOTE Number 1",
+  //       noteBody: "This is my first note!"
 
-      }),
-    new Note({
-      title: "NOTE Number 2",
-      noteBody: "This is my second note."
-    }
-    ),
-    new Note({
-      title: "NOTE Number 3",
-      noteBody: "This is my third note."
-    }
-    ),
-  ]
+  //     }),
+  //   new Note({
+  //     title: "NOTE Number 2",
+  //     noteBody: "This is my second note."
+  //   }
+  //   ),
+  //   new Note({
+  //     title: "NOTE Number 3",
+  //     noteBody: "This is my third note."
+  //   }
+  //   ),
+  // ]
 
 
 

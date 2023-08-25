@@ -7,7 +7,7 @@ export class Note {
         this.title = data.title
         this.noteBody = data.noteBody || "Create a note..."
         this.noteDate = data.noteDate ? new Date(data.noteDate) : new Date()
-        this.updatedNoteDate = data.updatedNoteDate ? new Date(this.updatedNoteDate) : new Date()
+        this.updatedNoteDate = data.UpdatedNoteDate ? new Date(data.Updated) : new Date()
 
     }
     get ListTemplate() {
@@ -45,6 +45,7 @@ export class Note {
               <p>${this.noteDate.toLocaleDateString()}${this.noteDate.toLocaleTimeString()}</p>
               <p>Last Updated On:</p>
               <p>${this.updatedNoteDate.toLocaleDateString()}${this.updatedNoteDate.toLocaleTimeString()}</p>
+            </div>
             </div>
             <div class="col-9">
               <textarea class="w-100" name="notesBody" id="notesBody" cols="30" rows="15">${this.noteBody}</textarea>
