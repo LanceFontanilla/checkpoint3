@@ -61,15 +61,49 @@
   <main id="router-view">
     <!-- PRIMARY VIEWPORT -->
 
-
-
-
     <div class="container-fluid">
       <section class="row">
+        <button class="btn btn-info col-2" data-bs-toggle="collapse" data-bs-target="#noteFormCollapse">
+          Create New Note <span class="mdi mdi-lead-pencil"></span>
+        </button>
 
-        <!-- STUB THIS IS THE NOTE LIST template -->
-        <div class="col-3" id="notes-list">
-          <!-- <div class="row">
+        <div class="collapse" id="noteFormCollapse">
+
+          <form class="row p-2" onsubmit="app.NotesController.createNote()">
+
+            <div class="form-floating mb-3 col-4">
+              <input required type="text" minLength="3" maxLength="15" class="form-control" id="noteTitle" name="title"
+                placeholder="Title">
+              <label for="noteTitle">Title</label>
+            </div>
+
+            <div class="form-floating mb-3 col-2">
+              <input required type="color" class="form-control" id="noteColor" name="color" placeholder="Theme Color">
+              <label for="noteColor">Theme Color</label>
+            </div>
+
+            <div class="form-floating">
+              <textarea required maxLength="350" class="form-control" placeholder="Enter note here.." name="noteBody"
+                id="noteBody" style="height: 100px"></textarea>
+              <label for="noteBody">Enter Note Here</label>
+            </div>
+
+            <div class="text-end">
+              <button type="submit" class="btn btn-info">Create Note</button>
+            </div>
+          </form>
+        </div>
+
+      </section>
+
+
+
+      <div class="container-fluid">
+        <section class="row">
+
+          <!-- STUB THIS IS THE NOTE LIST template -->
+          <div class="col-3" id="notes-list">
+            <!-- <div class="row">
             <div class="col-12">
               <p>Title</p>
             </div>
@@ -83,11 +117,11 @@
               <p>Report body...</p>
             </div>
           </div> -->
-        </div>
+          </div>
 
-        <!-- STUB THIS IS THE ACTIVE CASE VIEW -->
-        <div class="col-9" id="active-note">
-          <!-- <div class="row">
+          <!-- STUB THIS IS THE ACTIVE CASE VIEW -->
+          <div class="col-9" id="active-note">
+            <!-- <div class="row">
             <div class="col-3">
               <h4>Title</h4>
               <p>Date Created 8/25/23</p>
@@ -97,10 +131,10 @@
               <textarea class="w-100" name="notesBody" id="notesBody" cols="30" rows="15">NOTE BODY</textarea>
             </div>
           </div> -->
-        </div>
+          </div>
 
-      </section>
-    </div>
+        </section>
+      </div>
 
 
 
