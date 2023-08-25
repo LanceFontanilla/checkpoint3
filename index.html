@@ -15,7 +15,25 @@
   <title>checkpoint3</title>
 </head>
 
-<body>
+<style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+
+<body class="">
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
@@ -37,9 +55,53 @@
     </nav>
   </header>
 
+
+
   <!-- SECTION -->
   <main id="router-view">
     <!-- PRIMARY VIEWPORT -->
+
+    <div class="container-fluid">
+      <section class="row">
+
+        <!-- STUB THIS IS THE NOTE LIST template -->
+        <div class="col-3" id="notes-list">
+          <!-- <div class="row">
+            <div class="col-12">
+              <p>Title</p>
+            </div>
+            <div class="col-12">
+              <p>Date Created: 8/25/23</p>
+            </div>
+            <div class="col-12">
+              <p>Date Updated: 8/25/23</p>
+            </div>
+            <div class="col-12">
+              <p>Report body...</p>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- STUB THIS IS THE ACTIVE CASE VIEW -->
+        <div class="col-9" id="active-note">
+          <!-- <div class="row">
+            <div class="col-3">
+              <h4>Title</h4>
+              <p>Date Created 8/25/23</p>
+              <p>Date Updated 8/25/23</p>
+            </div>
+            <div class="col-9">
+              <textarea class="w-100" name="notesBody" id="notesBody" cols="30" rows="15">NOTE BODY</textarea>
+            </div>
+          </div> -->
+        </div>
+
+      </section>
+    </div>
+
+
+
+
   </main>
 
   <!-- SECTION -->
