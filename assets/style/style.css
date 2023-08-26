@@ -1,8 +1,119 @@
 /* BASIC STYLES HERE */
 
 
-.noteBody {
-    height: 40vh;
-    border: 2px, solid, black;
-    background-color: rgb(107, 152, 152);
+:root {
+    --red: rgba(199, 25, 25, 0.9);
+    --orange: rgba(236, 159, 14, 0.9);
+    --yellow: rgba(226, 226, 19, 0.9);
+    --green: rgba(13, 170, 13, 0.9);
+    --blue: rgba(17, 77, 240, 0.9);
+    --purple: rgba(96, 6, 148, 0.9);
+    --red1: rgba(199, 25, 25, 0.5);
+    --orange1: rgba(236, 159, 14, 0.5);
+    --yellow1: rgba(226, 226, 19, 0.5);
+    --green1: rgba(13, 170, 13, 0.5);
+    --blue1: rgba(17, 77, 240, 0.5);
+    --purple1: rgba(96, 6, 148, 0.5);
+}
+
+.titleCard-red {
+    border: 2px solid black;
+    background-color: var(--red);
+    color: white;
+}
+
+.titleCard-orange {
+    border: 2px solid black;
+    background-color: var(--orange);
+    color: white;
+}
+
+.titleCard-yellow {
+    border: 2px solid black;
+    background-color: var(--yellow);
+    color: black;
+}
+
+.titleCard-green {
+    border: 2px solid black;
+    background-color: var(--green);
+    color: white;
+}
+
+.titleCard-blue {
+    border: 2px solid black;
+    background-color: var(--blue);
+    color: white;
+}
+
+.titleCard-purple {
+    border: 2px solid black;
+    background-color: var(--purple);
+    color: white;
+}
+
+.bodyCard-red {
+    background-color: var(--red1);
+
+}
+
+.bodyCard-orange {
+    background-color: var(--orange1);
+
+}
+
+.bodyCard-yellow {
+    background-color: var(--yellow1);
+
+}
+
+.bodyCard-green {
+    background-color: var(--green1);
+
+}
+
+.bodyCard-blue {
+    background-color: var(--blue1);
+
+}
+
+.bodyCard-purple {
+    background-color: var(--purple1);
+
+}
+
+.btn-red {
+    border: 2px solid black;
+    background-color: var(--red);
+    color: white;
+}
+
+.btn-orange {
+    border: 2px solid black;
+    background-color: var(--orange);
+    color: white;
+}
+
+.btn-yellow {
+    border: 2px solid black;
+    background-color: var(--yellow);
+    color: black;
+}
+
+.btn-green {
+    border: 2px solid black;
+    background-color: var(--green);
+    color: white;
+}
+
+.btn-blue {
+    border: 2px solid black;
+    background-color: var(--blue);
+    color: white;
+}
+
+.btn-purple {
+    border: 2px solid black;
+    background-color: var(--purple);
+    color: white;
 }

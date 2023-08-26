@@ -62,34 +62,39 @@
     <!-- PRIMARY VIEWPORT -->
 
     <div class="container-fluid">
-      <section class="row">
+      <section class="row p-3 bg-grey">
         <button class="btn btn-info col-2" data-bs-toggle="collapse" data-bs-target="#noteFormCollapse">
           Create New Note <span class="mdi mdi-lead-pencil"></span>
         </button>
-
         <div class="collapse" id="noteFormCollapse">
+          <form class="row p-4" onsubmit="app.NotesController.createNote()">
 
-          <form class="row p-2" onsubmit="app.NotesController.createNote()">
+            <div class="d-flex align-items-center">
+              <div class="form-floating mb-3 col-4">
+                <input required type="text" minLength="3" maxLength="15" class="form-control" id="noteTitle"
+                  name="title" placeholder="Title">
+                <label for="noteTitle">Note Title</label>
+              </div>
 
-            <div class="form-floating mb-3 col-4">
-              <input required type="text" minLength="3" maxLength="15" class="form-control" id="noteTitle" name="title"
-                placeholder="Title">
-              <label for="noteTitle">Title</label>
-            </div>
+              <div class="form-floating mb-3 col-5 p-3 d-flex align-items-center justify-content-between">
 
-            <div class="form-floating mb-3 col-2">
-              <input required type="color" class="form-control" id="noteColor" name="color" placeholder="Theme Color">
-              <label for="noteColor">Theme Color</label>
-            </div>
+                <div class="p-3 fs-5">
+                  <label>Color Theme: </label>
+                  <select name="color" id="color">
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="purple">Purple</option>
+                  </select>
+                </div>
 
-            <div class="form-floating">
-              <textarea required maxLength="350" class="form-control" placeholder="Enter note here.." name="noteBody"
-                id="noteBody" style="height: 100px"></textarea>
-              <label for="noteBody">Enter Note Here</label>
-            </div>
+                <div class="p-4">
+                  <button type="submit" class="btn btn-info">Create</button>
+                </div>
 
-            <div class="text-end">
-              <button type="submit" class="btn btn-info">Create Note</button>
+              </div>
             </div>
           </form>
         </div>
@@ -98,8 +103,8 @@
 
 
 
-      <div class="container-fluid">
-        <section class="row">
+      <div class="container-fluid p-5 pe-0">
+        <section class="row p-5 pe-0">
 
           <!-- STUB THIS IS THE NOTE LIST template -->
           <div class="col-3" id="notes-list">
@@ -120,21 +125,30 @@
           </div>
 
           <!-- STUB THIS IS THE ACTIVE CASE VIEW -->
-          <div class="col-9" id="active-note">
-            <!-- <div class="row">
-            <div class="col-3">
-              <h4>Title</h4>
-              <p>Date Created 8/25/23</p>
-              <p>Date Updated 8/25/23</p>
-            </div>
-            <div class="col-9">
-              <textarea class="w-100" name="notesBody" id="notesBody" cols="30" rows="15">NOTE BODY</textarea>
-            </div>
-          </div> -->
-          </div>
+          <div class="col-9 p-5" id="active-note">
 
-        </section>
+            <!-- <div class="row">
+              <div class="col-3 titleCard-${this.color}">
+                <h4>${this.title}</h4>
+                <p>Created On:</p>
+                <p>${this.noteDate.toLocaleDateString()}<span>${this.noteDate.toLocaleTimeString()}</span></p>
+                <p>Last Updated On:</p>
+                <p>${this.updatedNoteDate.toLocaleDateString()}<span>${this.updatedNoteDate.toLocaleTimeString()}</span>
+                </p>
+              </div>
+              <div class="col-9 bodyCard-${this.color}">
+                <textarea class="w-100" name="noteBody" id="noteBody" cols="30" rows="15">${this.noteBody}</textarea>
+                <div class="text-end">
+                  <button class="btn btn-${this.color}" onclick="app.NotesController.saveNote()">Save Note</button>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
       </div>
+
+      </section>
+    </div>
 
 
 

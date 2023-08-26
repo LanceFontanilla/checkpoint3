@@ -5,33 +5,35 @@ import { setHTML } from "../utils/Writer.js"
 import { Pop } from "../utils/Pop.js"
 
 function _drawNotes() {
-    console.log('drawing notes')
     let notes = AppState.notes
     let content = ''
     notes.forEach(noteObj => content += noteObj.ListTemplate)
     setHTML('notes-list', content)
+    console.log('drawing notes')
 }
 
 function _drawActive() {
-    console.log('drawing active')
     let active = AppState.activeNote
     setHTML('active-note', active.ActiveCaseTemplate)
 
+    console.log('drawing active')
 }
 
 
 export class NotesController {
     constructor() {
-        console.log("this is the notes controller")
 
         _drawNotes()
 
         AppState.on('activeNote', _drawActive)
-
+        AppState.on('notes', _drawNotes)
+        console.log("this is the notes controller")
     }
 
     setActive(caseId) {
         notesService.setActive(caseId)
+
+        console.log('settingActive from NotesController')
     }
 
     saveNote() {
@@ -40,7 +42,7 @@ export class NotesController {
         console.log('saving', updatedBody)
 
         notesService.saveNote(updatedBody)
-
+        _drawNotes()
     }
 
     createNote() {
@@ -48,8 +50,10 @@ export class NotesController {
         const form = window.event.target
         const formData = getFormData(form)
         console.log('creating new Note', formData)
-
         notesService.createNote(formData)
+
+        form.reset()
+        _drawNotes()
 
     }
 
@@ -58,6 +62,8 @@ export class NotesController {
         if (await Pop.confirm("Are you sure you want to remove this note?")) {
             console.log('deleting', noteId)
             notesService.deleteNote(noteId)
+            _drawNotes()
+
         }
     }
 
