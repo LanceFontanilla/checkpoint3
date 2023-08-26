@@ -54,32 +54,32 @@
 
 .bodyCard-red {
     background-color: var(--red1);
-
+    color: white;
 }
 
 .bodyCard-orange {
     background-color: var(--orange1);
-
+    color: white;
 }
 
 .bodyCard-yellow {
     background-color: var(--yellow1);
-
+    color: black;
 }
 
 .bodyCard-green {
     background-color: var(--green1);
-
+    color: white;
 }
 
 .bodyCard-blue {
     background-color: var(--blue1);
-
+    color: white;
 }
 
 .bodyCard-purple {
     background-color: var(--purple1);
-
+    color: white;
 }
 
 .btn-red {

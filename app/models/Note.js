@@ -12,7 +12,7 @@ export class Note {
   }
   get ListTemplate() {
     return /*html*/`
-        <div class="row selectable titleCard-${this.color}" onclick="app.NotesController.setActive('${this.id}')">
+        <div class="row selectable bodyCard-${this.color}" onclick="app.NotesController.setActive('${this.id}')">
             <div class="col-12 titleCard-${this.color}">
               <h5>${this.title}</h5>
             </div>
@@ -44,9 +44,9 @@ export class Note {
               <div class="col-3 titleCard-${this.color}">
                 <h4>${this.title}</h4>
                 <p>Created On:</p>
-                <p>${this.noteDate.toLocaleDateString()}<span>${this.noteDate.toLocaleTimeString()}</span></p>
+                <p>${this.noteDate.toLocaleDateString()}<span> ${this.noteDate.toLocaleTimeString()}</span></p>
                 <p>Last Updated On:</p>
-                <p>${this.updatedNoteDate.toLocaleDateString()}<span>${this.updatedNoteDate.toLocaleTimeString()}</span>
+                <p>${this.updatedNoteDate.toLocaleDateString()}<span> ${this.updatedNoteDate.toLocaleTimeString()}</span>
                 </p>
               </div>
               <div class="col-9 bodyCard-${this.color} p-4">

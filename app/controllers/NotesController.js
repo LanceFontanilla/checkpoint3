@@ -63,6 +63,7 @@ export class NotesController {
             console.log('deleting', noteId)
             notesService.deleteNote(noteId)
             _drawNotes()
+            location.reload()
 
         }
     }
