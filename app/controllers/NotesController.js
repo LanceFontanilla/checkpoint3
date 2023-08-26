@@ -19,12 +19,17 @@ function _drawActive() {
     console.log('drawing active')
 }
 
+function _noteCount() {
+    let noteCount = AppState.notes.length
+    document.getElementById('noteCount').innerText = `Number of Notes: ${noteCount}`
+    console.log(noteCount)
+}
 
 export class NotesController {
     constructor() {
 
         _drawNotes()
-
+        _noteCount()
         AppState.on('activeNote', _drawActive)
         AppState.on('notes', _drawNotes)
         console.log("this is the notes controller")
@@ -67,6 +72,7 @@ export class NotesController {
 
         }
     }
+
 
 }
 

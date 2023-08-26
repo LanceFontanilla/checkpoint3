@@ -9,10 +9,12 @@ export class Note {
     this.noteDate = data.noteDate ? new Date(data.noteDate) : new Date()
     this.updatedNoteDate = data.UpdatedNoteDate ? new Date(data.Updated) : new Date()
     this.color = data.color
+    this.count = data.count
   }
   get ListTemplate() {
     return /*html*/`
-        <div class="row selectable bodyCard-${this.color}" onclick="app.NotesController.setActive('${this.id}')">
+
+        <div class="row selectable bodyCard-${this.color} p-1" onclick="app.NotesController.setActive('${this.id}')">
             <div class="col-12 titleCard-${this.color}">
               <h5>${this.title}</h5>
             </div>
@@ -20,13 +22,7 @@ export class Note {
               <p>Created On:</p>
               <p>${this.noteDate.toLocaleDateString()} <span> ${this.noteDate.toLocaleTimeString()} </span></p>
             </div>
-            <div class="col-12">
-              <p>Last Updated On:</p>
-              <p>${this.updatedNoteDate.toLocaleDateString()} <span>${this.updatedNoteDate.toLocaleTimeString()} </span></p>
-            </div>
-            <div class="col-12">
-              <p>${this.ComputeNoteTitle}</p>
-            </div>
+            
             <div class="text-end py-2 titleCard-${this.color}">
               <button class="btn btn-dark fs-4" onclick="app.NotesController.deleteNote('${this.id}')"><i class="mdi mdi-delete"></i> </button>
             </div>
@@ -34,15 +30,11 @@ export class Note {
         `
   }
 
-  get ComputeNoteTitle() {
-    return this.noteBody.slice(0, 30) + '...'
-  }
-
   get ActiveCaseTemplate() {
     return /*html*/`
             <div class="row">
               <div class="col-3 titleCard-${this.color}">
-                <h4>${this.title}</h4>
+                <h3>${this.title}</h3>
                 <p>Created On:</p>
                 <p>${this.noteDate.toLocaleDateString()}<span> ${this.noteDate.toLocaleTimeString()}</span></p>
                 <p>Last Updated On:</p>

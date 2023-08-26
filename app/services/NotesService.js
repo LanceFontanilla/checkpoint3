@@ -7,12 +7,19 @@ function _saveNotes() {
     console.log('saveNotes function')
 }
 
+function _noteCount() {
+    let noteCount = AppState.notes.length
+    document.getElementById('noteCount').innerText = `Number of Notes: ${noteCount}`
+    console.log(noteCount)
+}
+
 class NotesService {
 
     setActive(noteId) {
         let foundNote = AppState.notes.find(noteObj => noteObj.id == noteId)
         console.log('setting active')
         AppState.activeNote = foundNote
+        _noteCount()
     }
 
     saveNote(updatedBody) {
@@ -21,7 +28,7 @@ class NotesService {
         saveState('notes', AppState.notes)
         console.log('saving note from notes services')
         AppState.emit('activeNote')
-
+        _noteCount()
         _saveNotes()
     }
 
@@ -33,6 +40,7 @@ class NotesService {
 
         AppState.activeNote = newNote
         _saveNotes()
+        _noteCount()
     }
 
     deleteNote(noteId) {
@@ -43,8 +51,10 @@ class NotesService {
         AppState.notes = filteredNoteArr
         AppState.emit('notes')
         _saveNotes()
-
+        _noteCount()
     }
+
+
 
 }
 
