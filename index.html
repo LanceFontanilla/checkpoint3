@@ -40,7 +40,7 @@
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ms-2">checkpoint3</span>
+        <span class="ms-2">NOTE TAKER</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +49,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <!-- NAVLINKS -->
-          <a href="#/about" class="nav-link">About</a>
+
         </div>
       </div>
     </nav>
@@ -62,21 +62,21 @@
     <!-- PRIMARY VIEWPORT -->
 
     <div class="container-fluid">
-      <section class="row p-3 bg-grey">
+      <section class="row p-3 bg-dark text-light">
         <button class="btn btn-info col-2" data-bs-toggle="collapse" data-bs-target="#noteFormCollapse">
           Create New Note <span class="mdi mdi-lead-pencil"></span>
         </button>
-        <div class="collapse" id="noteFormCollapse">
+        <div class="collapse col-12" id="noteFormCollapse">
           <form class="row p-4" onsubmit="app.NotesController.createNote()">
 
             <div class="d-flex align-items-center">
               <div class="form-floating mb-3 col-4">
                 <input required type="text" minLength="3" maxLength="15" class="form-control" id="noteTitle"
                   name="title" placeholder="Title">
-                <label for="noteTitle">Note Title</label>
+                <label class="text-dark" for="noteTitle">Note Title</label>
               </div>
 
-              <div class="form-floating mb-3 col-5 p-3 d-flex align-items-center justify-content-between">
+              <div class="form-floating mb-3 col-5 p-3 d-flex align-items-center justify-content-center">
 
                 <div class="p-3 fs-5">
                   <label>Color Theme: </label>
@@ -90,7 +90,7 @@
                   </select>
                 </div>
 
-                <div class="p-4">
+                <div class="p-4 fs-1">
                   <button type="submit" class="btn btn-info">Create</button>
                 </div>
 

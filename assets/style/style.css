@@ -16,6 +16,12 @@
     --purple1: rgba(96, 6, 148, 0.5);
 }
 
+
+body {
+    background-color: rgba(2, 2, 2, 0.767);
+    color: aliceblue;
+}
+
 .titleCard-red {
     border: 2px solid black;
     background-color: var(--red);
