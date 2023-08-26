@@ -7,7 +7,7 @@ export class Note {
     this.title = data.title || "Please enter a title"
     this.noteBody = data.noteBody || "Create a note..."
     this.noteDate = data.noteDate ? new Date(data.noteDate) : new Date()
-    this.updatedNoteDate = data.UpdatedNoteDate ? new Date(data.Updated) : new Date()
+    this.updatedNoteDate = data.updatedNoteDate ? new Date(data.noteDate) : new Date()
     this.color = data.color
     this.count = data.count
   }
@@ -38,7 +38,7 @@ export class Note {
                 <p>Created On:</p>
                 <p>${this.noteDate.toLocaleDateString()}<span> ${this.noteDate.toLocaleTimeString()}</span></p>
                 <p>Last Updated On:</p>
-                <p>${this.updatedNoteDate.toLocaleDateString()}<span> ${this.updatedNoteDate.toLocaleTimeString()}</span>
+                <p>${this.updatedNoteDate}</p>
                 </p>
               </div>
               <div class="col-9 bodyCard-${this.color} p-4">

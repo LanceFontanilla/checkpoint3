@@ -25,6 +25,8 @@ function _noteCount() {
     console.log(noteCount)
 }
 
+
+
 export class NotesController {
     constructor() {
 
@@ -44,11 +46,16 @@ export class NotesController {
     saveNote() {
         let textAreaElem = document.querySelector('textarea')
         let updatedBody = textAreaElem.value
+
         console.log('saving', updatedBody)
 
         notesService.saveNote(updatedBody)
+
         _drawNotes()
+        _drawActive()
+
     }
+
 
     createNote() {
         window.event.preventDefault()

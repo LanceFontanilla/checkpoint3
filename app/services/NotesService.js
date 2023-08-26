@@ -13,6 +13,14 @@ function _noteCount() {
     console.log(noteCount)
 }
 
+function _updateNoteDate() {
+    const date = Date.now()
+    const dt = new Date(date)
+    AppState.activeNote.updatedNoteDate = dt.toLocaleDateString() + ' ' + dt.toLocaleTimeString()
+    console.log('this is the updated note date', AppState.activeNote.updatedNoteDate)
+}
+
+
 class NotesService {
 
     setActive(noteId) {
@@ -29,8 +37,12 @@ class NotesService {
         console.log('saving note from notes services')
         AppState.emit('activeNote')
         _noteCount()
+        _updateNoteDate()
         _saveNotes()
+
     }
+
+
 
     createNote(formData) {
         let newNote = new Note(formData)
